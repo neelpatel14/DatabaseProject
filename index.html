@@ -24,6 +24,9 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
 
+    <script type="text/javascript" src="creative.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
   </head>
 
   <body id="page-top">
@@ -100,9 +103,21 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+              <i class="fa fa-4x fa-download mb-3 sr-icons"></i>
+              <h3 class="mb-3">Export Data</h3>
+               <button class="btn btn-success" id="download2"></button>  
+               <script>
+                 var obj = {a: 123, b: "4 5 6"};
+                  var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
+
+                  var a = document.createElement('a');
+                  a.href = 'data:' + data;
+                  a.download = 'data.json';
+                  a.innerHTML = 'download JSON';
+
+                  var container = document.getElementById('download2');
+                  container.appendChild(a);
+               </script>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
