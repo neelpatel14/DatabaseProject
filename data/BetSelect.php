@@ -4,9 +4,7 @@
 
  	$stmt = $db->stmt_init();
 
- 	if($stmt->prepare("select * from PJ_Bets where betid like ?") or die(mysqli_error($db))) {
- 		$searchString = '%' . $_GET['betid'] . '%';
- 		$stmt->bind_param(s, $searchString);
+ 	if($stmt->prepare("select * from PJ_Bets") or die(mysqli_error($db))) {
  		$stmt->execute();
  		$stmt->bind_result($betid, $Amount, $Odds, $Outcome, $Type);
  		echo "<table border=1><th>betid</th><th>Amount</th><th>Odds</th><th>Outcome</th><th>Type</th>\n";
